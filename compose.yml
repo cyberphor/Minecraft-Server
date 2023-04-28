@@ -1,0 +1,7 @@
+services:
+  minecraft:
+    image: minecraft:latest
+    build: .
+    network_mode: bridge
+    ports:
+    - 5050:5050
