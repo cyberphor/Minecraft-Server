@@ -1,8 +1,7 @@
 services:
   minecraft:
-    build: minecraft
-    image: minecraft:latest
-    container_name: minecraft
-    network_mode: bridge
+    build: minecraft-server
+    image: minecraft-server:latest
+    container_name: minecraft-server
     ports:
-    - 5050:5050
+    - 1337:1337
