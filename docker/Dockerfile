@@ -3,6 +3,8 @@ LABEL Author="Victor Fernandez III, @cyberphor"
 
 RUN apk add --no-cache python3 py3-pip openjdk17 py-requests
 
+WORKDIR /opt/minecraft-server
+
 COPY eula.txt eula.txt
 
 COPY get_minecraft.py get_minecraft.py
