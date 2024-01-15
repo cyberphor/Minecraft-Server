@@ -1,4 +1,5 @@
 FROM alpine:latest
+
 LABEL Author="Victor Fernandez III, @cyberphor"
 
 RUN apk add --no-cache python3 py3-pip openjdk17 py-requests

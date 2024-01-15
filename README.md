@@ -2,18 +2,17 @@
 A Minecraft server container image.
 
 ## Usage
+### Docker Compose
 ```bash
-docker compose up
+docker compose -f docker/compose.yml up
 ```
 
-Enter the command below if you modify of any of the provided files.
+### Terraform
 ```bash
-docker compose up --build
-```
-
-Enter the command below if you want to run your server in the background. 
-```bash
-docker compose up -d
+az login
+terraform -chdir=terraform init
+terraform -chdir=terraform plan
+terraform -chdir=terraform apply -auto-approve
 ```
 
 ## Copyright
