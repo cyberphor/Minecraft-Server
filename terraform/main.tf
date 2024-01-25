@@ -30,21 +30,29 @@ resource "azurerm_container_registry" "main" {
   admin_enabled       = true
 }
 
+# resource "azuread_application" "container_registry"
 resource "azuread_application" "main" {
+# display_name = "minecraft-server-container-registry-sp"
   display_name = var.image
 }
 
+# resource "azuread_service_principal" "container_registry"
 resource "azuread_service_principal" "main" {
+  # application_id = azuread_application.container_registry.application_id
   application_id = azuread_application.main.application_id
 }
 
+# resource "azuread_service_principal_password" "container_registry"
 resource "azuread_service_principal_password" "main" {
+  # service_principal_id = azuread_service_principal.container_registry.object_id
   service_principal_id = azuread_service_principal.main.object_id
 }
 
+# resource "azurerm_role_assignment" "container_registry"
 resource "azurerm_role_assignment" "main" {
   scope                = azurerm_container_registry.main.id
   role_definition_name = "AcrPush"
+  # principal_id         = azuread_service_principal.container_registry.object_id
   principal_id         = azuread_service_principal.main.object_id
   principal_type       = "ServicePrincipal"
 }
@@ -96,7 +104,9 @@ resource "azurerm_container_group" "main" {
   }
   image_registry_credential {
     server = "${azurerm_container_registry.main.name}.azurecr.io"
+    # username = azuread_service_principal.container_registry.application_id
     username = azuread_service_principal.main.application_id
+    # password = azuread_service_principal_password.container_registry.value
     password = azuread_service_principal_password.main.value
   }
   os_type             = "Linux"

@@ -5,7 +5,7 @@ variable "location" {
 
 variable "resource_group" {
   type = string
-  default = "minecraft-server"
+  default = "demo"
 }
 
 variable "image" {

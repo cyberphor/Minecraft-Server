@@ -1,0 +1,3 @@
+$env:AZURE_TENANT_ID=""
+$env:AZURE_CLIENT_ID=""
+$env:AZURE_CLIENT_SECRET=""

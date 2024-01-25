@@ -1,0 +1,6 @@
+terraform/*.terraform*
+terraform/terraform*
+terraform/start-stop-function/.terraform*
+terraform/start-stop-function/*.zip
+terraform/start-stop-function/function/venv*
+terraform/start-stop-function/terraform*
