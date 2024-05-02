@@ -10,9 +10,10 @@ docker compose -f docker/compose.yml up
 ### Terraform
 ```bash
 az login
+az account set --subscription "Personal"
 terraform -chdir=terraform init
 terraform -chdir=terraform plan
-terraform -chdir=terraform apply -auto-approve
+terraform -chdir=terraform apply
 ```
 
 ## Copyright

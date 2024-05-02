@@ -6,6 +6,9 @@ services:
       - 1337:1337
     volumes:
       - minecraft-server-world:/opt/minecraft-server/world
+      - type: bind
+        source: ./server.properties
+        target: /opt/minecraft-server/world/server.properties
 
 volumes:
   minecraft-server-world:

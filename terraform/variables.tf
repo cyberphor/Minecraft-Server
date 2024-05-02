@@ -5,12 +5,12 @@ variable "location" {
 
 variable "resource_group" {
   type = string
-  default = "minecraft-server"
+  default = "happyserver"
 }
 
 variable "image" {
   type    = string
-  default = "minecraft-server"
+  default = "happyserver"
 }
 
 variable "image_version" {
