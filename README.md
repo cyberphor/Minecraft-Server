@@ -4,7 +4,7 @@ A Minecraft server container image.
 ## Usage
 ### Docker Compose
 ```bash
-docker compose -f docker/compose.yml up
+docker compose -f docker/compose.yml up --build
 ```
 
 ### Terraform

@@ -3,7 +3,7 @@ FROM alpine:latest
 LABEL Author="Victor Fernandez III, @cyberphor"
 
 # install Python
-RUN apk add --no-cache python3 py3-pip openjdk17 py-requests
+RUN apk add --no-cache python3 py3-pip openjdk21 py-requests
 
 # create the directory needed
 WORKDIR /opt/minecraft-server

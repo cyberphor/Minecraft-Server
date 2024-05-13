@@ -1,14 +1,15 @@
 services:
   minecraft:
-    image: minecraft-server:v1.0.0
+    build: .
+    image: minecraft-server:latest
     container_name: minecraft-server
     ports:
       - 1337:1337
     volumes:
-      - minecraft-server-world:/opt/minecraft-server/world
       - type: bind
         source: ./server.properties
-        target: /opt/minecraft-server/world/server.properties
+        target: /opt/minecraft-server/server.properties
+      - minecraft-server-world:/opt/minecraft-server/world
 
 volumes:
   minecraft-server-world:
