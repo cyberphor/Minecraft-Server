@@ -24,10 +24,10 @@ resource "azurerm_storage_share" "main" {
 
 resource "azurerm_container_registry" "main" {
   resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  name                = azurerm_storage_account.main.name
-  sku                 = "Basic" 
-  admin_enabled       = true
+  location                        = azurerm_resource_group.main.location
+  name                            = azurerm_storage_account.main.name
+  sku                               = "Basic" 
+  admin_enabled            = true
 }
 
 # resource "azuread_application" "container_registry"
